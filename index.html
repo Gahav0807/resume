@@ -13,29 +13,35 @@
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
         <h1 class="text-xl font-bold">Duma</h1>
 
-        <!-- Кнопка-бургер -->
         <button id="menu-btn" class="md:hidden">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
 
-        <!-- Навигация -->
-        <nav id="menu"
-          class="opacity-0 -translate-y-4 transition-all duration-500 ease-out pointer-events-none absolute top-full left-0 w-full bg-white border-t border-gray-200 px-4 text-sm space-y-2 md:space-y-0 md:space-x-6 md:flex md:static md:w-auto md:opacity-100 md:translate-y-0 md:pointer-events-auto md:transition-none md:border-0 md:py-0 hidden md:block">
-          <a href="#about" class="block md:inline hover:text-gray-600">Обо мне</a>
-          <a href="#skills" class="block md:inline hover:text-gray-600">Навыки</a>
-          <a href="#projects" class="block md:inline hover:text-gray-600">Проекты</a>
-          <a href="#contact" class="block md:inline hover:text-gray-600">Контакты</a>
+        <nav class="hidden md:flex space-x-6 text-sm">
+          <a href="#about" class="hover:text-gray-600">Обо мне</a>
+          <a href="#skills" class="hover:text-gray-600">Навыки</a>
+          <a href="#projects" class="hover:text-gray-600">Проекты</a>
+          <a href="#contact" class="hover:text-gray-600">Контакты</a>
         </nav>
       </div>
     </header>
 
+    <!-- Мобильная панель -->
+    <div id="mobile-panel"
+         class="fixed top-[64px] left-0 w-full bg-white shadow-md border-t border-gray-200 px-4 py-4 space-y-3 text-sm opacity-0 -translate-y-4 pointer-events-none transition-all duration-500 ease-out md:hidden z-40">
+      <a href="#about" class="block hover:text-gray-600">Обо мне</a>
+      <a href="#skills" class="block hover:text-gray-600">Навыки</a>
+      <a href="#projects" class="block hover:text-gray-600">Проекты</a>
+      <a href="#contact" class="block hover:text-gray-600">Контакты</a>
+    </div>
+
     <!-- Hero -->
     <section class="text-center py-20">
       <img src="avatar.jpg" alt="Моя фотография"
-        class="w-64 h-64 rounded-full mx-auto mb-6 object-cover border border-gray-300 shadow" />
+           class="w-64 h-64 rounded-full mx-auto mb-6 object-cover border border-gray-300 shadow" />
       <h2 class="text-4xl font-bold mb-2">Привет, я Duma</h2>
       <p class="text-lg text-gray-600 max-w-xl mx-auto">
         Fullstack-разработчик. Верстаю, пишу API, деплою и поддерживаю проекты. По кайфу залечу в проект
@@ -92,6 +98,7 @@
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-semibold mb-10 border-b pb-2 border-gray-300">Проекты</h2>
         <div class="grid md:grid-cols-3 gap-6">
+          <!-- Проектные карточки -->
           <div class="border rounded-xl p-5 hover:shadow transition">
             <h3 class="font-bold text-lg mb-1">S-Film</h3>
             <p class="text-sm text-gray-700 mb-2">Web-App</p>
@@ -140,35 +147,38 @@
     <!-- Скрипт -->
     <script>
       const menuBtn = document.getElementById('menu-btn');
-      const menu = document.getElementById('menu');
-      const links = menu.querySelectorAll('a');
+      const panel = document.getElementById('mobile-panel');
+      const panelLinks = panel.querySelectorAll('a');
+
       let isOpen = false;
 
-      menuBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
+      const openPanel = () => {
+        panel.classList.remove('pointer-events-none', 'opacity-0', '-translate-y-4');
+        panel.classList.add('pointer-events-auto', 'opacity-100', 'translate-y-0');
+        isOpen = true;
+      };
 
-        if (isOpen) {
-          menu.classList.remove('hidden');
-          requestAnimationFrame(() => {
-            menu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
-            menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-          });
-        } else {
-          menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-          menu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
-          setTimeout(() => menu.classList.add('hidden'), 500);
-        }
+      const closePanel = () => {
+        panel.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        panel.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+        isOpen = false;
+      };
+
+      menuBtn.addEventListener('click', () => {
+        isOpen ? closePanel() : openPanel();
       });
 
-      links.forEach(link => {
+      panelLinks.forEach(link => {
         link.addEventListener('click', () => {
-          if (window.innerWidth < 768 && isOpen) {
-            menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-            menu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
-            setTimeout(() => menu.classList.add('hidden'), 500);
-            isOpen = false;
-          }
+          if (window.innerWidth < 768 && isOpen) closePanel();
         });
+      });
+
+      document.addEventListener('click', (e) => {
+        const clickInside = panel.contains(e.target) || menuBtn.contains(e.target);
+        if (!clickInside && isOpen && window.innerWidth < 768) {
+          closePanel();
+        }
       });
     </script>
   </body>
