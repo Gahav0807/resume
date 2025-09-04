@@ -95,44 +95,155 @@
 
     <!-- Проекты -->
     <section id="projects" class="py-16 px-4 text-center">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl font-semibold mb-10 border-b pb-2 border-gray-300">Проекты</h2>
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 border-b pb-3 border-gray-200">Проекты</h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <!-- Проектные карточки -->
-          <div class="border rounded-xl p-5 hover:shadow transition">
-            <h3 class="font-bold text-lg mb-1">S-Film</h3>
-            <p class="text-sm text-gray-700 mb-2">Web-App</p>
-            <a href="https://t.me/typhooncode/30" target="_blank" class="text-sm text-black hover:underline">Посмотреть →</a>
+
+          <!-- S-Film -->
+          <div class="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition text-left">
+            <h3 class="font-bold text-xl mb-1">S-Film</h3>
+            <p class="text-sm text-gray-500 mb-4">Web-App</p>
+
+            <button 
+              onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-40'); this.querySelector('svg').classList.toggle('rotate-180')" 
+              class="flex items-center gap-2 text-sm font-medium text-black hover:text-gray-700 transition mb-3"
+            >
+              <span>Подробнее</span>
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-sm text-gray-600 mb-4">
+              <p class="mb-2"><span class="font-semibold text-gray-800">Цель:</span> Удобный сервис для покупки цензуренных фильмов</p>
+              <p>Подборки, избранное, быстрый поиск и пополнение баланса криптовалютой.</p>
+            </div>
+
+            <a href="https://t.me/typhooncode/30" target="_blank" 
+              class="inline-block text-sm font-medium text-white bg-black rounded-xl px-4 py-2 hover:bg-gray-800 transition">
+              Посмотреть →
+            </a>
           </div>
-          <div class="border rounded-xl p-5 hover:shadow transition">
-            <h3 class="font-bold text-lg mb-1">PalermoLight</h3>
-            <p class="text-sm text-gray-700 mb-2">Web-App</p>
-            <a href="https://t.me/typhooncode/42" target="_blank" class="text-sm text-black hover:underline">Посмотреть →</a>
+
+          <!-- PalermoLight -->
+          <div class="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition text-left">
+            <h3 class="font-bold text-xl mb-1">PalermoLight</h3>
+            <p class="text-sm text-gray-500 mb-4">Web-App</p>
+
+            <button 
+              onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-40'); this.querySelector('svg').classList.toggle('rotate-180')" 
+              class="flex items-center gap-2 text-sm font-medium text-black hover:text-gray-700 transition mb-3"
+            >
+              <span>Подробнее</span>
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-sm text-gray-600 mb-4">
+              <p class="mb-2"><span class="font-semibold text-gray-800">Цель:</span> Интернет-магазин по продаже люстр, светильников.</p>
+              <p>Поиск по товарам, артикулам; личный кабинет и заказы.</p>
+            </div>
+
+            <a href="https://t.me/typhooncode/42" target="_blank" 
+              class="inline-block text-sm font-medium text-white bg-black rounded-xl px-4 py-2 hover:bg-gray-800 transition">
+              Посмотреть →
+            </a>
           </div>
-          <div class="border rounded-xl p-5 hover:shadow transition">
-            <h3 class="font-bold text-lg mb-1">Messenger</h3>
-            <p class="text-sm text-gray-700 mb-2">Web-App</p>
-            <a href="https://t.me/typhooncode/46" target="_blank" class="text-sm text-black hover:underline">Посмотреть →</a>
+
+          <!-- Messenger -->
+          <div class="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition text-left">
+            <h3 class="font-bold text-xl mb-1">Messenger</h3>
+            <p class="text-sm text-gray-500 mb-4">Web-App</p>
+
+            <button 
+              onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-40'); this.querySelector('svg').classList.toggle('rotate-180')" 
+              class="flex items-center gap-2 text-sm font-medium text-black hover:text-gray-700 transition mb-3"
+            >
+              <span>Подробнее</span>
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-sm text-gray-600 mb-4">
+              <p class="mb-2"><span class="font-semibold text-gray-800">Цель:</span> Базовый обмен сообщениями.</p>
+              <p>Чаты в реальном времени и поиск собеседников.</p>
+            </div>
+
+            <a href="https://t.me/typhooncode/46" target="_blank" 
+              class="inline-block text-sm font-medium text-white bg-black rounded-xl px-4 py-2 hover:bg-gray-800 transition">
+              Посмотреть →
+            </a>
           </div>
-          <div class="border rounded-xl p-5 hover:shadow transition">
-            <h3 class="font-bold text-lg mb-1">Descoin</h3>
-            <p class="text-sm text-gray-700 mb-2">Telegram Mini-App</p>
-            <a href="https://t.me/typhooncode/23" target="_blank" class="text-sm text-black hover:underline">Посмотреть →</a>
+
+          <!-- Descoin -->
+          <div class="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition text-left">
+            <h3 class="font-bold text-xl mb-1">Descoin</h3>
+            <p class="text-sm text-gray-500 mb-4">Telegram Mini-App</p>
+
+            <button 
+              onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-40'); this.querySelector('svg').classList.toggle('rotate-180')" 
+              class="flex items-center gap-2 text-sm font-medium text-black hover:text-gray-700 transition mb-3"
+            >
+              <span>Подробнее</span>
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-sm text-gray-600 mb-4">
+              <p class="mb-2"><span class="font-semibold text-gray-800">Цель:</span> Веб-игра кликер.</p>
+              <p>Баланс, задания и рефельная система.</p>
+            </div>
+
+            <a href="https://t.me/typhooncode/23" target="_blank" 
+              class="inline-block text-sm font-medium text-white bg-black rounded-xl px-4 py-2 hover:bg-gray-800 transition">
+              Посмотреть →
+            </a>
           </div>
-          <div class="border rounded-xl p-5 hover:shadow transition">
-            <h3 class="font-bold text-lg mb-1">Worktopia</h3>
-            <p class="text-sm text-gray-700 mb-2">Telegram Bot</p>
-            <a href="https://t.me/typhooncode/28" target="_blank" class="text-sm text-black hover:underline">Посмотреть →</a>
+
+          <!-- Worktopia -->
+          <div class="border rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition text-left">
+            <h3 class="font-bold text-xl mb-1">Worktopia</h3>
+            <p class="text-sm text-gray-500 mb-4">Telegram Bot</p>
+
+            <button 
+              onclick="this.nextElementSibling.classList.toggle('max-h-0'); this.nextElementSibling.classList.toggle('max-h-40'); this.querySelector('svg').classList.toggle('rotate-180')" 
+              class="flex items-center gap-2 text-sm font-medium text-black hover:text-gray-700 transition mb-3"
+            >
+              <span>Подробнее</span>
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out text-sm text-gray-600 mb-4">
+              <p class="mb-2"><span class="font-semibold text-gray-800">Цель:</span> Поиск и организация работы через Telegram.</p>
+              <p>Поиск вакансий и резюме.</p>
+            </div>
+
+            <a href="https://t.me/typhooncode/28" target="_blank" 
+              class="inline-block text-sm font-medium text-white bg-black rounded-xl px-4 py-2 hover:bg-gray-800 transition">
+              Посмотреть →
+            </a>
           </div>
+
         </div>
       </div>
+
+     <p class="mt-10 max-w-3xl mx-auto text-gray-600 text-base leading-relaxed border-t pt-6">
+      <span class="font-semibold text-gray-800">Сроки выполнения заказов:</span> от нескольких дней до месяцев — всё зависит от масштаба проекта и оперативности всего коллектива. 
+      Стараюсь выполнять задачи при первой возможности.
+    </p>
+
     </section>
 
     <!-- Контакты -->
     <section id="contact" class="bg-gray-50 py-16 px-4 text-center">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-semibold mb-4">Связаться</h2>
-        <p class="text-gray-600 mb-6">Telegram открыт 24/7 — жду адекватные идеи</p>
+        <p class="text-gray-600 mb-6">Telegram открыт 24/7 — жду крутые идеи</p>
         <div class="flex justify-center gap-4">
           <a href="https://t.me/vdumanyan" class="border px-4 py-2 rounded hover:bg-gray-100 transition text-sm">Связь</a>
         </div>
